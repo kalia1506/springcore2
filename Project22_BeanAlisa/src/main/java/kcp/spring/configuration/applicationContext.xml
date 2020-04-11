@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- <bean id="date" class="java.util.Date" />
+	
+	<bean id="wmsg" name="m1,m2" class="kcp.spring.beans.WishMessageGenerator">
+		<property name="date" ref="date" />
+	</bean>
+	<alias name="wmsg" alias="message"/> -->
+	
+	  <!-- Dependent  Bean class cfg -->
+       <bean id="date"   class="java.util.Date"  name="dt"/>
+       
+       
+     
+
+</beans>

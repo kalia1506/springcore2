@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-dependency-check="simple"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean id="add" class="kcp.spring.beans.Address">
+		<property name="pin" value="761124" />
+		<property name="state" value="Odisha" />
+		<property name="VName" value="Badapada"></property>
+	</bean>
+	<bean id="Student" class="kcp.spring.beans.Student"
+		dependency-check="default">
+		<property name="SName" value="Kalu charan panda" />
+		<property name="address" ref="add" />
+		<property name="rollNo" value="13" />
+		<property name="CName" value="KK college" />
+		<property name="subjects">
+			<list>
+				<value>Mathematics</value>
+				<value>science</value>
+				<value>social science</value>
+				<value>MIL</value>
+				<value>English</value>
+				
+			</list>
+		</property>
+	</bean>
+
+</beans>
