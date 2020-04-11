@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- VoterCheckEligible class configuration -->
+	<bean id="check" class="kcp.spring.beans.VoterCheckEligible" init-method="Myinit" destroy-method="Mydestroy">
+		<property name="PName" value="kalu charan panda" />
+		<property name="age" value="25" />
+		<property name="address" value="badapada"></property>
+	</bean>
+
+</beans>

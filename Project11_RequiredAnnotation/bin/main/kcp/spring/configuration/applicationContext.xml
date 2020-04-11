@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<bean id="charger" class="kcp.spring.beans.Charger">
+		<property name="charagerID" value="4321" />
+		<property name="name" value="redmi" />
+		<property name="capacity" value="5000v" />
+		<property name="color" value="black" />
+		<property name="type" value="type3" />
+	</bean>
+	<context:annotation-config/>
+	<bean id="mob" class="kcp.spring.beans.Mobile">
+	 	<property name="charger" ref="charger" />
+		<property name="IMEI" value="987654321" />
+		<property name="moblieName" value="mi" />
+		 <property name="price" value="13000" />
+	</bean>
+
+</beans>

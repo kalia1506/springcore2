@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: kalia
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    url: jdbc:postgresql:///spring712
+    username: postgres

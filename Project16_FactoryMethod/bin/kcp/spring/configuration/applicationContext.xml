@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- ststic factory method -->
+	<bean id="c1" class="java.lang.Class" factory-method="forName">
+		<constructor-arg value="java.util.Date" />
+	</bean>
+	<bean id="c2" class="java.lang.System"
+		factory-method="getProperties" />
+	<!-- instance factory method -->
+	<bean id="i1" class="java.lang.String">
+		<constructor-arg value="good morning" />
+	</bean>
+	<bean id="i2" factory-bean="i1" factory-method="concat">
+		<constructor-arg value=" kalu charan panda" />
+	</bean>
+	<bean id="i3" factory-bean="i1" factory-method="subSequence">
+		<constructor-arg value="0" />
+		<constructor-arg value="5" />
+	</bean>
+
+
+
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- target class replacer -->
+	<bean id="Service" class="kcp.spring.service.BankSerivce">
+		<replaced-method name="simpleAmountInterest"
+			replacer="replacer">
+			<arg-type>double</arg-type>
+			<arg-type>int</arg-type>
+		</replaced-method>
+		<replaced-method name="CalcSqureArea" replacer="squre">
+			<arg-type>double</arg-type>
+		</replaced-method>
+	</bean>
+	<!-- replacer Method configuration -->
+	<bean id="replacer" class="kcp.spring.replacer.InserstReplacer">
+		<property name="rate" value="2.5"></property>
+	</bean>
+	<bean id="squre" class="kcp.spring.replacer.AreaReplacer">
+		<property name="l" value="10"></property>
+	</bean>
+
+
+
+</beans>

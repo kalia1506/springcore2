@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- depanadent class -->
+	<bean id="food" class="kcp.spring.beans.ManFood">
+		<constructor-arg name="food">
+			<list>
+				<value>Rice</value>
+				<value>Dal</value>
+				<value>curry</value>
+				<value>chicken</value>
+				<value>Chips</value>
+				<value>Egg</value>
+				<value>Pice</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="food1" class="kcp.spring.beans.ManFood">
+		<constructor-arg name="food">
+			<list>
+				<value>Rice1</value>
+				<value>Dal1</value>
+				<value>curry1</value>
+				<value>chicken1</value>
+				<value>Chips1</value>
+				<value>Egg1</value>
+				<value>Pice1</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!--Target class -->
+	<bean id="man" class="kcp.spring.beans.Man" autowire="constructor">
+		<constructor-arg name="name" value="kalu charan panda"/>
+	</bean>
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+<!--DATA SOURCE configuration  -->	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/kcpsp712"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+<!-- DAO class configuration -->
+	<bean id="hotelDetailsDAO"
+		class="kcp.spring.dao.HotelDetailsDAOImpl">
+		<constructor-arg ref="dataSource" />
+		
+	<!-- SERVICE class configuration -->	
+	</bean>
+	<bean id="hotelDetailsService"
+		class="kcp.spring.service.HotelDetailsServiceImpl">
+		<constructor-arg ref="hotelDetailsDAO" />
+	</bean>
+
+</beans>

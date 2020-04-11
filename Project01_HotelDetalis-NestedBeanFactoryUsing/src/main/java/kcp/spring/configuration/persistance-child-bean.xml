@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Controller -->
+	<bean id="hotelDetailsController"
+		class="kcp.spring.controller.MainController">
+		<!-- <constructor-arg ref="hotelDetailsService" /> -->
+		<constructor-arg>
+			<!-- <ref bean="hotelDetailsService" /> -->
+			<ref parent="hotelDetailsService" />
+		</constructor-arg>
+	</bean>
+	<!-- SERVICE class configuration -->
+
+	<!-- <bean id="hotelDetailsService"
+		class="kcp.spring.service.HotelDetailsServiceImpl">
+		<constructor-arg ref="hotelDetailsDAO" />
+	</bean> -->
+
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="DAO" class="kcp.spring.dao.CollegeDAOImpl"
+		scope="singleton" />
+	<bean id="StudentBO" class="kcp.spring.bo.StudentBO"
+		scope="prototype" />
+	<bean id="EmployeeBO" class="kcp.spring.bo.EmployeeBO"
+		scope="prototype" />
+
+	<bean id="collegeService"
+		class="kcp.spring.service.CollegeManagementService" scope="singleton">
+		<constructor-arg ref="DAO" />
+		<lookup-method name="getStudentBO" bean="StudentBO" />
+		<lookup-method name="getEmployeeBO" bean="EmployeeBO" />
+	</bean>
+	 <bean class="kcp.spring.bpp.DateBeanPostProcessor"/>
+</beans>

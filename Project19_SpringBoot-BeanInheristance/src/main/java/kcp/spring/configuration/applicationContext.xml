@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="baseplusor" class="kcp.spring.beans.PulsorBike">
+		<property name="engineCC" value="150" />
+		<property name="company" value="bajaj" />
+	</bean>
+	<bean id="rajaplusor" class="kcp.spring.beans.PulsorBike"
+		parent="baseplusor">
+		<property name="ownerName" value="kalu" />
+		<property name="bikeColor" value="red" />
+		<property name="bikeNo" value="oro7a3212" />
+		<property name="engineNo" value="9087654323" />
+	</bean>
+	<bean id="jagaplusor" class="kcp.spring.beans.PulsorBike"
+		parent="baseplusor">
+		<property name="ownerName" value="jaga" />
+		<property name="bikeColor" value="black" />
+		<property name="bikeNo" value="oro7as38712" />
+		<property name="engineNo" value="12345788" />
+	</bean>
+
+
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	<!-- depandent class -->
+	<bean id="dfb" class="kcp.spring.beans.DateBeanFactory">
+		<constructor-arg value="119" />
+		<constructor-arg value="11" />
+		<constructor-arg value="18" />
+	</bean>
+	<!-- target class -->
+	<bean id="schedule" class="kcp.spring.beans.ScheduleReminder">
+		<constructor-arg ref="dfb" />
+	</bean>
+
+</beans>
