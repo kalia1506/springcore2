@@ -6,8 +6,13 @@
 	<bean id="c1" class="java.lang.Class" factory-method="forName">
 		<constructor-arg value="java.util.Date" />
 	</bean>
+	<bean id="cal" class="java.util.Calendar"
+		factory-method="getInstance"/>
+		
 	<bean id="c2" class="java.lang.System"
 		factory-method="getProperties" />
+	
+	
 	<!-- instance factory method -->
 	<bean id="i1" class="java.lang.String">
 		<constructor-arg value="good morning" />

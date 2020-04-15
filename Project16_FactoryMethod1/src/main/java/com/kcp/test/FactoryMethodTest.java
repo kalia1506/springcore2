@@ -1,5 +1,6 @@
-package kcp.spring.test;
+package com.kcp.test;
 
+import java.util.Calendar;
 import java.util.Properties;
 
 import org.springframework.beans.factory.BeanFactory;
@@ -19,7 +20,7 @@ public class FactoryMethodTest {
 		 * ;
 		 */
 		BeanFactory factory;
-		factory = new XmlBeanFactory(new ClassPathResource("kcp/spring/configuration/applicationContext.xml"));
+		factory = new XmlBeanFactory(new ClassPathResource("com/kcp/configuration/applicationContext.xml"));
 		Class c1 = null;
 		c1 = factory.getBean("c1", Class.class);
 		System.out.println(c1 + " " + c1.getClass());
@@ -27,12 +28,14 @@ public class FactoryMethodTest {
 		Properties c2 = factory.getBean("c2", Properties.class);
 		System.out.println(c2 + " " + c2.getClass());
 		System.out.println();
-		String string=factory.getBean("i2",String.class);
+		String string = factory.getBean("i2", String.class);
 		System.out.println(string);
 		System.out.println();
-		String subString_=factory.getBean("i3",String.class);
+		String subString_ = factory.getBean("i3", String.class);
 		System.out.println(subString_);
-
+		System.out.println("========================");
+		Calendar cl=factory.getBean("cal",Calendar.class);
+		System.out.println(cl);
 	}
 
 }
